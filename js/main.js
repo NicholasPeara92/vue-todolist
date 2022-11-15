@@ -14,11 +14,43 @@
 
 const { createApp } = Vue
 
-
 createApp({
     data() {
         return {
-            message: 'Hello Vue!'
+            newTodo: '',
+            todoList: [
+                {
+                    text: 'Fare i compiti',
+                    done: false,
+                },
+                {
+                    text: 'Fare la spesa',
+                    done: false,
+                },
+                {
+                    text: 'Pagare le bollette',
+                    done: false,
+                }
+            ]
         }
+    },
+    methods: {
+        // aggiunge nuova task all'array todoList e sul container delle task
+        addTodo() {
+            if( this.newTodo !== ' ' ) {
+                this.newTodo = {
+                    text: this.newTodo,
+                    done: false,
+                };
+                this.todoList.push(this.newTodo);
+                console.log(this.todoList);
+                this.newTodo = '';
+            }
+        },
+        // rimuove task al click della x
+        removeTodo(index) {
+            this.todoList.splice(index, 1);
+        },
+        
     }
 }).mount('#app')
