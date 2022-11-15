@@ -37,7 +37,7 @@ createApp({
     methods: {
         // aggiunge nuova task all'array todoList e sul container delle task
         addTodo() {
-            if( this.newTodo !== ' ' ) {
+            if( this.newTodo !== '' ) {
                 this.newTodo = {
                     text: this.newTodo,
                     done: false,
@@ -51,6 +51,5 @@ createApp({
         removeTodo(index) {
             this.todoList.splice(index, 1);
         },
-        
     }
 }).mount('#app')
