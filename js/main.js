@@ -37,15 +37,12 @@ createApp({
     methods: {
         // aggiunge nuova task all'array todoList e sul container delle task
         addTodo() {
-            if( this.newTodo !== '' ) {
-                this.newTodo = {
-                    text: this.newTodo,
-                    done: false,
-                };
-                this.todoList.push(this.newTodo);
-                console.log(this.todoList);
-                this.newTodo = '';
-            }
+            this.newTodo = {
+                text: this.newTodo,
+                done: false,
+            };
+            this.todoList.push(this.newTodo);
+            this.newTodo = '';
         },
         // rimuove task al click della x
         removeTodo(index) {

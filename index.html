@@ -26,7 +26,7 @@
                 <div class="container-todo">
                     <ul v-if="todoList.length > 0">
                         <li class="task" v-for="(todo, index) in todoList">
-                            <span @click="todo.done = !todo.done" :class="{done: todo.done === true}">{{ todo.text }}</span>
+                            <span @click="todo.done = !todo.done" :class="{done: todo.done}">{{ todo.text }}</span>
                             <i class="fa-solid fa-xmark" @click="removeTodo(index)"></i>
                         </li>
                     </ul>
